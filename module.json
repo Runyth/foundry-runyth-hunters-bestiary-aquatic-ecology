@@ -42,9 +42,9 @@
       }
     ]
   },
-  "url": "https://github.com/runyth",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology",
+  "manifest": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology/releases/latest/download/module.json",
+  "download": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology/releases/download/v1.2.4/runyth-hunters-bestiary-aquatic-ecology-v1.2.4-mod.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "changelog": "CHANGELOG.md"
