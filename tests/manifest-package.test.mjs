@@ -32,15 +32,11 @@ test("all manifest runtime paths exist in the source tree", () => {
 });
 
 test("the install archive contains every manifest runtime path after extraction", () => {
-  execFileSync("python3", ["tools/package.py"], { cwd: root, stdio: "pipe" });
-  const archive = path.join(root, "dist", `${manifest.id}-v${manifest.version}.zip`);
+  execFileSync(process.execPath, ["tools/build.mjs"], { cwd: root, stdio: "pipe" });
+  const archive = path.join(root, "dist", `${manifest.id}-v${manifest.version}-mod.zip`);
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "hbae-package-"));
   try {
-    execFileSync("python3", ["-c", [
-      "import sys, zipfile",
-      "archive, destination = sys.argv[1:3]",
-      "with zipfile.ZipFile(archive) as z: z.extractall(destination)"
-    ].join("\n"), archive, temporary], { stdio: "pipe" });
+    execFileSync("unzip", ["-q", archive, "-d", temporary], { stdio: "pipe" });
     const installedRoot = path.join(temporary, manifest.id);
     for (const relative of referencedRuntimePaths()) {
       assert.equal(fs.existsSync(path.join(installedRoot, relative)), true, `Archive omitted ${relative}`);
