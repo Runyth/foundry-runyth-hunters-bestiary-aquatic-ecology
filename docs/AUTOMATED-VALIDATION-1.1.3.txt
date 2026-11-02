@@ -1,0 +1,11 @@
+Hunter's Bestiary: Aquatic Ecology 1.1.3 automated validation
+
+Automated tests: 29 passed, 0 failed
+Static validation: passed
+Ecology counts: 12 species, 36 signs, 60 rumors, 8 books, 12 hunts, 24 complications, 36 harvests
+English/German localization parity: 66/66 keys
+Runtime modules syntax checked: 14
+Manifest runtime paths verified in source tree: passed
+Manifest runtime paths verified after install ZIP extraction: passed
+Archive path-safety validation: passed
+Live Foundry VTT client testing: not performed

@@ -1,0 +1,40 @@
+<div class="hbae-dashboard hb-shared-dashboard" data-hbae-root>
+  <header class="hbae-toolbar">
+    <label><span>{{localize "HBAE.Search"}}</span><input type="search" value="{{query}}" data-hbae-search aria-label="{{localize 'HBAE.Search'}}"></label>
+    <div class="hbae-actions">
+      {{#if isGM}}
+        <button type="button" data-action="hbaeValidate"><i class="fa-solid fa-check-double"></i> {{localize "HBAE.Validate"}}</button>
+        <button type="button" data-action="hbaeGenerateBooks"><i class="fa-solid fa-book"></i> {{localize "HBAE.GenerateBooks"}}</button>
+        <button type="button" data-action="hbaeExport"><i class="fa-solid fa-file-export"></i> {{localize "HBAE.Export"}}</button>
+      {{/if}}
+      <button type="button" data-action="hbaeResetSize" title="{{localize 'HBAE.ResetSize'}}" aria-label="{{localize 'HBAE.ResetSize'}}"><i class="fa-solid fa-expand"></i></button>
+      <button type="button" data-action="hbaeResetPosition" title="{{localize 'HBAE.ResetPosition'}}" aria-label="{{localize 'HBAE.ResetPosition'}}"><i class="fa-solid fa-crosshairs"></i></button>
+    </div>
+  </header>
+  <nav class="hbae-tabs" aria-label="{{localize 'HBAE.Navigation'}}">
+    {{#each tabs}}<button type="button" data-hbae-tab="{{id}}" class="{{#if active}}is-active{{/if}}">{{label}}</button>{{/each}}
+  </nav>
+
+  {{#if (eq activeTab "species")}}<section class="hbae-panel hbae-grid">
+    {{#each species}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><div class="hbae-species-heading">{{#if @root.isGM}}<button type="button" class="hbae-species-image-button" data-action="hbaeChangeImage" data-monster-id="{{id}}" title="{{localize 'HBAE.ChangeImage'}}"><img src="{{image}}" alt="{{displayName}}" loading="lazy"><span><i class="fa-solid fa-camera"></i></span></button>{{else}}<img class="hbae-species-image" src="{{image}}" alt="{{displayName}}" loading="lazy">{{/if}}<h2>{{displayName}}</h2></div><p class="hbae-kicker">{{ecologicalRole}} · {{scholarlyName}}</p><p>{{summary}}</p><dl><dt>{{localize "HBAE.Field.Regions"}}</dt><dd>{{regionsText}}</dd><dt>{{localize "HBAE.Field.Depth"}}</dt><dd>{{habitat.depthM}}</dd><dt>{{localize "HBAE.Field.Salinity"}}</dt><dd>{{habitat.salinityPpt}}</dd>{{#if actorPolicy}}<dt>{{localize "HBAE.Field.Actor"}}</dt><dd>{{actorPolicy.provider}}</dd>{{/if}}</dl></article>{{/each}}
+    <p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p>
+  </section>{{/if}}
+
+  {{#if (eq activeTab "ecosystem")}}<section class="hbae-panel"><h2>{{localize "HBAE.Tab.Ecosystem"}}</h2><p>{{foodNodes.length}} {{localize "HBAE.Field.Nodes"}} · {{foodEdges.length}} {{localize "HBAE.Field.Relationships"}}</p><div class="hbae-table-wrap"><table><thead><tr><th>{{localize "HBAE.Field.Source"}}</th><th>{{localize "HBAE.Field.Relationship"}}</th><th>{{localize "HBAE.Field.Target"}}</th><th>{{localize "HBAE.Field.Regions"}}</th></tr></thead><tbody>{{#each foodEdges}}<tr><td>{{from}}</td><td>{{type}}</td><td>{{to}}</td><td>{{regions}}</td></tr>{{/each}}</tbody></table></div></section>{{/if}}
+
+  {{#if (eq activeTab "regions")}}<section class="hbae-panel hbae-grid">{{#each regions}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><h2>{{displayName}}</h2><p>{{habitatsText}}</p><dl><dt>{{localize "HBAE.Field.Salinity"}}</dt><dd>{{salinity}}</dd><dt>{{localize "HBAE.Field.Temperature"}}</dt><dd>{{temperature}}</dd><dt>{{localize "HBAE.Field.Connections"}}</dt><dd>{{connections}}</dd></dl></article>{{/each}}<p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "calendar")}}<section class="hbae-panel"><div class="hbae-table-wrap"><table><thead><tr><th>{{localize "HBAE.Field.Month"}}</th><th>{{localize "HBAE.Field.Phase"}}</th><th>{{localize "HBAE.Field.Events"}}</th></tr></thead><tbody>{{#each calendar}}<tr><td>{{month}}</td><td>{{phase}}</td><td>{{events.length}}</td></tr>{{/each}}</tbody></table></div></section>{{/if}}
+
+  {{#if (eq activeTab "signs")}}<section class="hbae-panel hbae-grid">{{#each signs}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><h2>{{displayName}}</h2><p>{{descriptionText}}</p><dl><dt>{{localize "HBAE.Field.Persistence"}}</dt><dd>{{persistenceText}}</dd><dt>{{localize "HBAE.Field.Check"}}</dt><dd>{{check.skill}} DC {{check.dc}}</dd></dl></article>{{/each}}<p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "rumors")}}<section class="hbae-panel hbae-grid">{{#each rumors}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><h2>{{sourceType}} · {{classification}}</h2><p>{{textValue}}</p><p class="hbae-kicker">{{localize "HBAE.Field.Weight"}} {{weight}} · {{regions}}</p></article>{{/each}}<p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "books")}}<section class="hbae-panel hbae-grid">{{#each books}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><h2>{{displayTitle}}</h2><p>{{authorText}} · {{date}}</p><p>{{biasText}}</p><p class="hbae-kicker">{{reliability}} · {{species.length}} {{localize "HBAE.Field.Species"}}</p></article>{{/each}}<p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "hunts")}}<section class="hbae-panel hbae-grid">{{#each hunts}}<article class="hbae-card" data-hbae-record data-search-text="{{searchText}}"><h2>{{displayName}}</h2><p>{{objectiveText}}</p><ol>{{#each stages}}<li>{{displayName}}</li>{{/each}}</ol></article>{{/each}}<p data-hbae-empty hidden>{{localize "HBAE.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "providers")}}<section class="hbae-panel"><div class="hbae-table-wrap"><table><thead><tr><th>{{localize "HBAE.Field.Provider"}}</th><th>{{localize "HBAE.Field.Complete"}}</th><th>{{localize "HBAE.Field.Species"}}</th><th>{{localize "HBAE.Field.Registered"}}</th></tr></thead><tbody>{{#each providers}}<tr><td>{{providerId}}</td><td>{{complete}}</td><td>{{species}}</td><td>{{registeredAt}}</td></tr>{{else}}<tr><td colspan="4">{{localize "HBAE.NoResults"}}</td></tr>{{/each}}</tbody></table></div></section>{{/if}}
+
+  {{#if (eq activeTab "validation")}}<section class="hbae-panel"><h2>{{localize "HBAE.Tab.Validation"}}</h2><p>{{#if validation.valid}}✓{{else}}✗{{/if}} {{validation.issues.length}} {{localize "HBAE.Field.Issues"}}</p><pre>{{validationJson}}</pre></section>{{/if}}
+</div>

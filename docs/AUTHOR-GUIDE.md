@@ -1,0 +1,3 @@
+# Complementary-Module Author Guide
+
+Provide all required collections and stable IDs. Every species needs deep ecology, multiple signs, five rumor layers, a research source, a staged hunt, harvest anatomy, regional and seasonal presence, explicit relationships, bilingual text, and an Actor policy. Diet resources must be food-web nodes. Predator and prey ranges must overlap. Strict registration is atomic at the ecology layer; system-specific modules should roll back both layers if either side fails.

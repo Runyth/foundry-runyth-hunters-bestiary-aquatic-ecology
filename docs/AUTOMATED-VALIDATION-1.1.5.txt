@@ -1,0 +1,8 @@
+hunters-bestiary-aquatic-ecology 1.1.5 automated validation
+
+- npm test: 33/33 passed
+- npm run check: passed
+- English/German localization parity: 67/67
+- Production import resolution: passed
+- Deprecated Actor sense alias scan: passed where applicable
+- Explicit operation-result contract regression tests: passed

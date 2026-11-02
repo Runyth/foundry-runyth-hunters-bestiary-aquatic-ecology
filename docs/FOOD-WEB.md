@@ -1,0 +1,3 @@
+# Food-Web Reference
+
+Primary production: ribbon kelp, eelgrass, marsh algae, phytoplankton. Detritus: fish-processing waste, timber and carrion, benthic mud, rare large carcasses. Filterers: Siltbell Colony and Greywake Sifter. Grazers and engineers: Brineback Raker, Tideglass Keeper, Mudcrown Burrower. Scavenger: Pilingshell Scavenger. Parasite: Needlelung Lamprey. Mesopredators: Glassfin Pike, Reedjaw Ambusher, Wreckcoil Eel. Near-apex and apex: Coldwake Thresher and Trenchjaw Cetarch. The authoritative edge list is `data/ecology.json#foodWeb`.

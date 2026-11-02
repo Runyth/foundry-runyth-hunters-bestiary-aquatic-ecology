@@ -1,0 +1,51 @@
+{
+  "id": "hunters-bestiary-aquatic-ecology",
+  "title": "Hunter's Bestiary: Aquatic Ecology",
+  "description": "System-neutral aquatic ecology expansion for Hunter's Bestiary.",
+  "version": "1.2.4",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Runyth"
+    }
+  ],
+  "esmodules": [
+    "main.mjs"
+  ],
+  "styles": [
+    "styles/aquatic-ecology.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "hunters-bestiary",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.4.2"
+        }
+      }
+    ]
+  },
+  "url": "https://github.com/runyth",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}

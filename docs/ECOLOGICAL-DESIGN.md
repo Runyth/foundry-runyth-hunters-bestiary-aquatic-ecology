@@ -1,0 +1,3 @@
+# Ecological Design
+
+The ecosystem was designed from energy and habitat constraints before encounter mechanics. Producers and settlement waste support filterers, grazers, scavengers, ordinary fish, and river prey. Mesopredators occupy different substrates and salinity bands. The Coldwake Thresher follows cold pelagic prey fronts; the Trenchjaw Cetarch is extremely sparse and uses deep carrion, large fish, seals, and occasional Greywake calves. Slow breeders receive protection and low densities. Human infrastructure changes flow, salinity, oxygen, nursery substrate, and carrion supply rather than merely attracting arbitrary monsters.

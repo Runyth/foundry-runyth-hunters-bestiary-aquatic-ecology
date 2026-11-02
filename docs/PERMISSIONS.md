@@ -1,0 +1,3 @@
+# Permissions
+
+Provider registration, unregistration, package export, book generation, and incomplete-package acceptance are GM-only. Players receive knowledge-gated species data and cannot read GM truth or provider internals. Generated Journals default to no player ownership. This module does not create its own mutation socket; it delegates world-content registration to the GM-authoritative core API.

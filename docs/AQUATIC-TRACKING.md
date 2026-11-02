@@ -1,0 +1,3 @@
+# Aquatic Tracking Guide
+
+Aquatic evidence is transient and contextual. Wake geometry lasts minutes; films and disturbed silt last a tide; plates, egg capsules, bites, and prepared samples may persist weeks. Every sign declares its producer, persistence, destructive conditions, check, false interpretation, and deeper inference. Investigation, Perception, Survival, Nature, Animal Handling, Medicine, and vehicle/tool knowledge are used according to the evidence rather than one universal skill.

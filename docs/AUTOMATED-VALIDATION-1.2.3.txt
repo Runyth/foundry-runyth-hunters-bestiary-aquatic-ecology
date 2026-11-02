@@ -1,0 +1,269 @@
+Hunter’s Bestiary: Aquatic Ecology 1.2.3
+
+
+> hunters-bestiary-aquatic-ecology@1.2.3 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: Aquatic Ecology ApplicationV2 position contains only width and height
+ok 1 - Aquatic Ecology ApplicationV2 position contains only width and height
+  ---
+  duration_ms: 0.913393
+  type: 'test'
+  ...
+# Subtest: minimum dimensions remain in geometry defaults
+ok 2 - minimum dimensions remain in geometry defaults
+  ---
+  duration_ms: 0.221824
+  type: 'test'
+  ...
+# Subtest: dashboard foregrounding waits for the asynchronous render
+ok 3 - dashboard foregrounding waits for the asynchronous render
+  ---
+  duration_ms: 0.119336
+  type: 'test'
+  ...
+# Subtest: research-book generation uses success-close and failure-foreground progress policy
+ok 4 - research-book generation uses success-close and failure-foreground progress policy
+  ---
+  duration_ms: 0.31652
+  type: 'test'
+  ...
+# Subtest: bundled ecology is strict-valid
+ok 5 - bundled ecology is strict-valid
+  ---
+  duration_ms: 2.118077
+  type: 'test'
+  ...
+# Subtest: library contains exactly twelve species
+ok 6 - library contains exactly twelve species
+  ---
+  duration_ms: 0.254673
+  type: 'test'
+  ...
+# Subtest: all ids are globally unique
+ok 7 - all ids are globally unique
+  ---
+  duration_ms: 0.188456
+  type: 'test'
+  ...
+# Subtest: every species has multiple signs and five rumor classes
+ok 8 - every species has multiple signs and five rumor classes
+  ---
+  duration_ms: 0.176938
+  type: 'test'
+  ...
+# Subtest: every species has research, hunt, harvest, and explicit Actor policy
+ok 9 - every species has research, hunt, harvest, and explicit Actor policy
+  ---
+  duration_ms: 0.166841
+  type: 'test'
+  ...
+# Subtest: every predator relationship has range and salinity overlap
+ok 10 - every predator relationship has range and salinity overlap
+  ---
+  duration_ms: 0.275517
+  type: 'test'
+  ...
+# Subtest: food web references resolve and every relationship has overlap
+ok 11 - food web references resolve and every relationship has overlap
+  ---
+  duration_ms: 0.308931
+  type: 'test'
+  ...
+# Subtest: all 33 Imperial months are represented
+ok 12 - all 33 Imperial months are represented
+  ---
+  duration_ms: 0.821817
+  type: 'test'
+  ...
+# Subtest: breeding is inside seasonal presence
+ok 13 - breeding is inside seasonal presence
+  ---
+  duration_ms: 0.367873
+  type: 'test'
+  ...
+# Subtest: harvest anatomy and safe handling are complete
+ok 14 - harvest anatomy and safe handling are complete
+  ---
+  duration_ms: 0.771332
+  type: 'test'
+  ...
+# Subtest: incomplete packages are rejected strictly and report exact paths
+ok 15 - incomplete packages are rejected strictly and report exact paths
+  ---
+  duration_ms: 3.994856
+  type: 'test'
+  ...
+# Subtest: optional partial validation preserves failures without inventing data
+ok 16 - optional partial validation preserves failures without inventing data
+  ---
+  duration_ms: 2.84347
+  type: 'test'
+  ...
+# Subtest: books, hunts, rumors, and signs resolve to existing species
+ok 17 - books, hunts, rumors, and signs resolve to existing species
+  ---
+  duration_ms: 0.255082
+  type: 'test'
+  ...
+# Subtest: keystone and apex roles are not collapsed into twelve bosses
+ok 18 - keystone and apex roles are not collapsed into twelve bosses
+  ---
+  duration_ms: 0.123365
+  type: 'test'
+  ...
+# Subtest: canonical campaign date is exact
+ok 19 - canonical campaign date is exact
+  ---
+  duration_ms: 0.040116
+  type: 'test'
+  ...
+# Subtest: Foundry hooks and listeners are narrowly owned and idempotent
+ok 20 - Foundry hooks and listeners are narrowly owned and idempotent
+  ---
+  duration_ms: 0.274693
+  type: 'test'
+  ...
+# Subtest: manifest paths, localization keys, assets, and production imports resolve
+ok 21 - manifest paths, localization keys, assets, and production imports resolve
+  ---
+  duration_ms: 6.241342
+  type: 'test'
+  ...
+# Subtest: player API paths do not expose provider truth
+ok 22 - player API paths do not expose provider truth
+  ---
+  duration_ms: 0.132195
+  type: 'test'
+  ...
+# Subtest: CSS selectors are module scoped
+ok 23 - CSS selectors are module scoped
+  ---
+  duration_ms: 0.247748
+  type: 'test'
+  ...
+# Subtest: dashboard is resizable and exposes separate settings reset controls
+ok 24 - dashboard is resizable and exposes separate settings reset controls
+  ---
+  duration_ms: 0.227193
+  type: 'test'
+  ...
+# Subtest: dashboard geometry preserves size and position independently
+ok 25 - dashboard geometry preserves size and position independently
+  ---
+  duration_ms: 0.267015
+  type: 'test'
+  ...
+# Subtest: dashboard geometry is clamped on smaller displays
+ok 26 - dashboard geometry is clamped on smaller displays
+  ---
+  duration_ms: 0.072547
+  type: 'test'
+  ...
+# Subtest: dashboard persists final geometry without blocking close
+ok 27 - dashboard persists final geometry without blocking close
+  ---
+  duration_ms: 0.13586
+  type: 'test'
+  ...
+# Subtest: official ecology layer registers canonical naming metadata and validates each dashboard opening
+ok 28 - official ecology layer registers canonical naming metadata and validates each dashboard opening
+  ---
+  duration_ms: 0.100333
+  type: 'test'
+  ...
+# Subtest: every bundled species declares a packaged image
+ok 29 - every bundled species declares a packaged image
+  ---
+  duration_ms: 8.083003
+  type: 'test'
+  ...
+# Subtest: dashboard delegates species image changes to Hunter's Bestiary core
+ok 30 - dashboard delegates species image changes to Hunter's Bestiary core
+  ---
+  duration_ms: 1.315214
+  type: 'test'
+  ...
+# Subtest: manifest uses Foundry's standard modular localization declarations
+ok 31 - manifest uses Foundry's standard modular localization declarations
+  ---
+  duration_ms: 2.959873
+  type: 'test'
+  ...
+# Subtest: shipped data uses localization keys and contains no embedded language maps
+ok 32 - shipped data uses localization keys and contains no embedded language maps
+  ---
+  duration_ms: 18.360548
+  type: 'test'
+  ...
+# Subtest: localization delegates to Foundry's active game.i18n service
+ok 33 - localization delegates to Foundry's active game.i18n service
+  ---
+  duration_ms: 0.686426
+  type: 'test'
+  ...
+# Subtest: production has no custom language selector or translation-dictionary injection
+ok 34 - production has no custom language selector or translation-dictionary injection
+  ---
+  duration_ms: 3.427802
+  type: 'test'
+  ...
+# Subtest: the fixed shared result contract is required
+ok 35 - the fixed shared result contract is required
+  ---
+  duration_ms: 0.945414
+  type: 'test'
+  ...
+# Subtest: all manifest runtime paths exist in the source tree
+ok 36 - all manifest runtime paths exist in the source tree
+  ---
+  duration_ms: 1.374815
+  type: 'test'
+  ...
+# Subtest: the install archive contains every manifest runtime path after extraction
+ok 37 - the install archive contains every manifest runtime path after extraction
+  ---
+  duration_ms: 1278.458887
+  type: 'test'
+  ...
+# Subtest: concurrent ecology data requests share one browser fetch
+ok 38 - concurrent ecology data requests share one browser fetch
+  ---
+  duration_ms: 4.207576
+  type: 'test'
+  ...
+# Subtest: dashboard report continues after a failed research book and accumulates progress errors
+ok 39 - dashboard report continues after a failed research book and accumulates progress errors
+  ---
+  duration_ms: 1.325445
+  type: 'test'
+  ...
+# Subtest: public generator keeps its original fail-fast array behavior by default
+ok 40 - public generator keeps its original fail-fast array behavior by default
+  ---
+  duration_ms: 0.415491
+  type: 'test'
+  ...
+# Subtest: startup failures are kept outside the frozen public API
+ok 41 - startup failures are kept outside the frozen public API
+  ---
+  duration_ms: 0.600175
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1404.787037
+
+
+> hunters-bestiary-aquatic-ecology@1.2.3 check
+> node tools/validate.mjs
+
+Aquatic ecology validation passed: 12 species, 36 signs, 60 rumors, 8 books, 12 hunts, 24 complications, 36 harvests.
+Localization parity: 2407 keys. Static runtime modules: 15.
