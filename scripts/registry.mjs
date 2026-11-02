@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import { MODULE_ID, PROVIDER_ID, CORE_ID, SETTINGS } from "./constants.mjs";
 import { validateEcologyPackage } from "./validation.mjs";
 import { buildCoreBundles } from "./core-bundles.mjs";

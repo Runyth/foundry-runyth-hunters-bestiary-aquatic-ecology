@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 export const DEFAULT_DASHBOARD_SIZE = Object.freeze({ width: 1080, height: 760 });
 export const MIN_DASHBOARD_SIZE = Object.freeze({ width: 720, height: 520 });
 const VIEWPORT_MARGIN = 40;
