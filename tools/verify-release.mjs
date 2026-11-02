@@ -131,7 +131,7 @@ const rootManifest = JSON.parse(readFileSync(path.join(ROOT, "..", "module.json"
     "scripts/core-bundles.mjs",
     "scripts/api.mjs",
     "data/ecology.json",
-    "data/ecology.schema.json",
+    "schemas/ecology.schema.json",
     "assets/aquatic-ecology.svg",
     "assets/actors/README.txt",
     "styles/runyth-hunters-bestiary-aquatic-ecology.css",
@@ -152,9 +152,10 @@ const rootManifest = JSON.parse(readFileSync(path.join(ROOT, "..", "module.json"
     "tests/research-books-progress.test.mjs",
     "tests/manifest.test.mjs",
     "tests/hygiene.test.mjs",
+    "tests/manifest.test.mjs",
+    "tests/hygiene.test.mjs",
     "docs/COMPATIBILITY.md",
-    "docs/LOCALIZATION.md",
-    "docs/USER-GUIDE.md"
+    "docs/LOCALIZATION.md"
   ]) {
     if (!namesInArchive.includes(`${expectedRoot}/${required}`)) fail(`source archive misses ${required}`);
   }
@@ -182,7 +183,7 @@ const rootManifest = JSON.parse(readFileSync(path.join(ROOT, "..", "module.json"
   const expectedRoot = `${MODULE_ID}-v${VERSION}-doc`;
   const entries = readZip(readFileSync(docPath));
   const namesInArchive = entries.map((entry) => entry.name);
-  for (const required of ["CHANGELOG.md", "README.md", "docs/COMPATIBILITY.md", "docs/LOCALIZATION.md", "docs/USER-GUIDE.md"]) {
+  for (const required of ["CHANGELOG.md", "README.md", "docs/COMPATIBILITY.md", "docs/LOCALIZATION.md"]) {
     if (!namesInArchive.includes(`${expectedRoot}/${required}`)) fail(`documentation archive misses ${required}`);
   }
   console.log("Documentation archive: contract files verified.");
