@@ -110,7 +110,7 @@ test("player API paths do not expose provider truth", () => {
 });
 
 test("CSS selectors are module scoped", () => {
-  const css = fs.readFileSync(new URL("../styles/aquatic-ecology.css", import.meta.url), "utf8");
+  const css = fs.readFileSync(new URL("../styles/runyth-hunters-bestiary-aquatic-ecology.css", import.meta.url), "utf8");
   for (const selector of ["button", "input", ".window-header", ".application", ".tab", ".sr-only"]) assert.equal(new RegExp(`(^|\\n)\\s*${selector.replace(".","\\.")}\\b`).test(css), false, selector);
 });
 

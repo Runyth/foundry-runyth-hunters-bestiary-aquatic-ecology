@@ -14,7 +14,7 @@ function isGm() { return Boolean(game.user?.isGM); }
 export function visibleSpeciesForCurrentUser(species) {
   if (!species || typeof species !== "object" || Array.isArray(species) || typeof species.id !== "string" || !species.id.trim()) return null;
   if (isGm()) return clone(species);
-  const core = game.modules.get("hunters-bestiary")?.api;
+  const core = game.modules.get("runyth-hunters-bestiary")?.api;
   const visible = core?.getMonster?.(species.id);
   return visible && typeof visible === "object" ? visible : { id: species.id };
 }

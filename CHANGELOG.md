@@ -1,6 +1,6 @@
 ## 1.2.4 — 2026-08-24
 
-- Fixed the player-visible species API so a species hidden by Hunter's Bestiary knowledge filtering falls back to its stable `{ id }` reference instead of becoming `null`.
+- Fixed the player-visible species API so a species hidden by Runyth Hunter's Bestiary knowledge filtering falls back to its stable `{ id }` reference instead of becoming `null`.
 - Prevented dependent system layers from receiving malformed species arrays during startup validation.
 - Added regression coverage for hidden species, visible species, GM species access, and invalid packaged entries.
 - No world-data migration is required.
@@ -38,7 +38,7 @@
 
 ## 1.1.5
 
-- Raised the Hunter's Bestiary dependency floor to 1.3.6 so research-generation results containing Journal Documents use the safe explicit operation-result contract.
+- Raised the Runyth Hunter's Bestiary dependency floor to 1.3.6 so research-generation results containing Journal Documents use the safe explicit operation-result contract.
 - Added a dependency regression check while preserving research-book generation and progress-window behavior.
 
 ## 1.1.4
@@ -47,7 +47,7 @@
 - Partial or complete failures keep the progress window open and foregrounded with a cumulative failure list.
 - Research-book generation continues with later books after an individual Journal failure when launched from the dashboard.
 - Success notifications and dashboard rerenders no longer obscure failed progress reports.
-- Raised the Hunter's Bestiary dependency floor to 1.3.5 for the shared progress-window policy.
+- Raised the Runyth Hunter's Bestiary dependency floor to 1.3.5 for the shared progress-window policy.
 
 ## 1.1.3
 
@@ -59,7 +59,7 @@
 ## 1.1.2
 
 - Fixed the settings launcher race that called `bringToFront()` before ApplicationV2 had created its window element.
-- Updated the core dependency floor to Hunter's Bestiary 1.3.3.
+- Updated the core dependency floor to Runyth Hunter's Bestiary 1.3.3.
 
 ## 1.1.1 - 2026-07-31
 
@@ -88,4 +88,4 @@
 
 ## 1.0.0 — 2026-07-30
 
-- Initial system-neutral aquatic ecosystem release with twelve species, public extension API, ApplicationV2 dashboard, complete Hunter's Bestiary bundles, ecological validation, English/German localization, and deterministic packaging.
+- Initial system-neutral aquatic ecosystem release with twelve species, public extension API, ApplicationV2 dashboard, complete Runyth Hunter's Bestiary bundles, ecological validation, English/German localization, and deterministic packaging.

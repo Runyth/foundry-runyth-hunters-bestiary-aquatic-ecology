@@ -1,8 +1,8 @@
-# Build Report — Hunter's Bestiary: Aquatic Ecology 1.1.4
+# Build Report — Runyth Hunter's Bestiary: Aquatic Ecology 1.1.4
 
 ## Scope
 
-This patch changes the research-book generation progress lifecycle only. It uses the Hunter's Bestiary 1.3.5 shared progress policy to close on complete success and retain/foreground reports containing failures.
+This patch changes the research-book generation progress lifecycle only. It uses the Runyth Hunter's Bestiary 1.3.5 shared progress policy to close on complete success and retain/foreground reports containing failures.
 
 ## Qualification
 

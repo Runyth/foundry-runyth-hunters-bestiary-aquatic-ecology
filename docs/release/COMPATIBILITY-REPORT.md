@@ -1,4 +1,4 @@
-# Compatibility Report - Hunter's Bestiary: Aquatic Ecology 1.1.0
+# Compatibility Report - Runyth Hunter's Bestiary: Aquatic Ecology 1.1.0
 
 ## Supported environment
 
@@ -11,7 +11,7 @@ No live Foundry client was launched in the build environment. Compatibility clai
 
 ## Declared dependencies
 
-- Hunter's Bestiary 1.3.0+
+- Runyth Hunter's Bestiary 1.3.0+
 - Foundry VTT 13
 
 The uploaded authoritative baseline was a source ZIP. A corresponding installable baseline ZIP was not supplied, so source-versus-installable comparison for the old version could not be performed. The new source and install archives are cross-validated during release qualification.

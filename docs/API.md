@@ -1,6 +1,6 @@
-# Hunter's Bestiary: Aquatic Ecology API
+# Runyth Hunter's Bestiary: Aquatic Ecology API
 
-Release: 1.1.0. Public APIs are exposed through `game.modules.get("hunters-bestiary-aquatic-ecology").api`; no new global namespace is required. Existing compatibility surfaces are retained for this feature release.
+Release: 1.1.0. Public APIs are exposed through `game.modules.get("runyth-runyth-hunters-bestiary-aquatic-ecology").api`; no new global namespace is required. Existing compatibility surfaces are retained for this feature release.
 
 ## Shared core dependency
 
@@ -16,7 +16,7 @@ After `await api.whenReady()`:
 - Provider registration/unregistration through the module's ecology registry.
 - `open(options)` and `getStatus()`.
 
-The module consumes `core.ui`, registers `type: "subject"`, subject `Aquatic Ecology`, and provider ID `hunters-bestiary-aquatic-ecology`.
+The module consumes `core.ui`, registers `type: "subject"`, subject `Aquatic Ecology`, and provider ID `runyth-runyth-hunters-bestiary-aquatic-ecology`.
 
 ## Initialization, registration, and rollback
 

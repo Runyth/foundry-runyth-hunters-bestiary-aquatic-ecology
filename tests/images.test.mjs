@@ -8,7 +8,7 @@ test("every bundled species declares a packaged image", async () => {
   for (const species of data.species) assert.match(species.img, /^modules\/hunters-bestiary-aquatic-ecology\//);
 });
 
-test("dashboard delegates species image changes to Hunter's Bestiary core", async () => {
+test("dashboard delegates species image changes to Runyth Hunter's Bestiary core", async () => {
   const source = await readFile(new URL("../scripts/apps/dashboard.mjs", import.meta.url), "utf8");
   const template = await readFile(new URL("../templates/dashboard.hbs", import.meta.url), "utf8");
   assert.match(source, /openMonsterImagePicker/);

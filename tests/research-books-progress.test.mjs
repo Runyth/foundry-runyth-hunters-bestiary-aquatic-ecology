@@ -27,7 +27,7 @@ function installGlobals({ failId } = {}) {
   globalThis.CONST = { DOCUMENT_OWNERSHIP_LEVELS: { NONE: 0 } };
   globalThis.JournalEntry = {
     async create(source) {
-      if (source.flags["hunters-bestiary-aquatic-ecology"].managedKey === failId) throw new Error("creation failed");
+      if (source.flags["runyth-hunters-bestiary-aquatic-ecology"].managedKey === failId) throw new Error("creation failed");
       return { name: source.name, id: source.name, pages: [] };
     }
   };

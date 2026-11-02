@@ -13,7 +13,7 @@ const errors = [];
 if (manifest.version !== "1.2.4" || JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8")).version !== "1.2.4") errors.push("Manifest and package versions must both be 1.2.4.");
 const requireFile = (file) => { if (!fs.existsSync(path.join(root, file))) errors.push(`Missing referenced file ${file}`); };
 for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map((entry) => entry.path)]) requireFile(file);
-if (manifest.relationships.requires.find((entry) => entry.id === "hunters-bestiary")?.compatibility?.minimum !== "1.4.2") errors.push("Core minimum must be 1.4.2.");
+if (manifest.relationships.requires.find((entry) => entry.id === "runyth-hunters-bestiary")?.compatibility?.minimum !== "1.4.2") errors.push("Core minimum must be 1.4.2.");
 const report = validateEcologyPackage(data, { strict: true });
 if (!report.valid) errors.push(...report.issues.map((entry) => `${entry.code} ${entry.path}: ${entry.message}`));
 if (JSON.stringify(Object.keys(en).sort()) !== JSON.stringify(Object.keys(de).sort())) errors.push("modular English/German localization parity failed.");
@@ -31,7 +31,7 @@ for (const relative of runtimeEntries) {
 }
 const production = runtimeEntries.map((name) => fs.readFileSync(path.join(root, name), "utf8")).join("\n");
 for (const forbidden of ["renderApplication", "renderApplicationV2", "renderChatMessage", "window.addEventListener", "$(`", "FilePicker("]) if (production.includes(forbidden)) errors.push(`Forbidden or broad runtime pattern: ${forbidden}`);
-const css = fs.readFileSync(path.join(root, "styles/aquatic-ecology.css"), "utf8");
+const css = fs.readFileSync(path.join(root, "styles/runyth-hunters-bestiary-aquatic-ecology.css"), "utf8");
 for (const line of css.split(/\r?\n/)) if (/^(button|input|\.window-header|\.application|\.tab|\.sr-only)\b/.test(line.trim())) errors.push(`Unscoped CSS selector: ${line.trim()}`);
 if (data.species.length !== 12 || data.signs.length !== 36 || data.rumors.length !== 60 || data.hunts.length !== 12) errors.push("Expected content counts not met.");
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }

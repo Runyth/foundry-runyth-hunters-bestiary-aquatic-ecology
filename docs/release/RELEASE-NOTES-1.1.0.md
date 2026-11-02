@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology 1.1.0 Release Notes
+# Runyth Hunter's Bestiary: Aquatic Ecology 1.1.0 Release Notes
 
 Released 2026-07-31. Feature release from 1.0.1 to 1.1.0.
 

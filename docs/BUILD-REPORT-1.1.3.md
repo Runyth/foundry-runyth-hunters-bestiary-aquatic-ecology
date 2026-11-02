@@ -1,9 +1,9 @@
-# Build Report — Hunter's Bestiary: Aquatic Ecology 1.1.3
+# Build Report — Runyth Hunter's Bestiary: Aquatic Ecology 1.1.3
 
 ## Inputs
 
 - Baseline: 1.1.2 reproducible source ZIP
-- Module ID: `hunters-bestiary-aquatic-ecology`
+- Module ID: `runyth-runyth-hunters-bestiary-aquatic-ecology`
 - Foundry compatibility: v13
 
 ## Packaging correction

@@ -1,10 +1,10 @@
-# Build report — Hunter's Bestiary: Aquatic Ecology 1.1.1
+# Build report — Runyth Hunter's Bestiary: Aquatic Ecology 1.1.1
 
 ## Inputs
 
 - Authoritative baseline: previous accepted reproducible source ZIP.
 - Patch date: 2026-07-31.
-- Stable technical module ID: `hunters-bestiary-aquatic-ecology`.
+- Stable technical module ID: `runyth-runyth-hunters-bestiary-aquatic-ecology`.
 
 ## Qualification
 

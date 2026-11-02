@@ -21,7 +21,7 @@ Hooks.once("ready", async () => {
   const failures = [...startupFailures];
   try {
     const core = game.modules.get(CORE_ID);
-    if (!core?.active || !core.api?.whenReady) throw new Error("Hunter's Bestiary 1.4.2+ is not active or its public API is unavailable.");
+    if (!core?.active || !core.api?.whenReady) throw new Error("Runyth Hunter's Bestiary 1.4.2+ is not active or its public API is unavailable.");
     await core.api.whenReady();
     core.api.registerComplementaryModule({
       moduleId: MODULE_ID,

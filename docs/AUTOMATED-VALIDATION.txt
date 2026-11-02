@@ -4,7 +4,7 @@
 
 ```text
 
-> hunters-bestiary-aquatic-ecology@1.2.4 test
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.2.4 test
 > node --test tests/*.test.mjs
 
 TAP version 13
@@ -206,8 +206,8 @@ ok 33 - every bundled species declares a packaged image
   duration_ms: 10.487211
   type: 'test'
   ...
-# Subtest: dashboard delegates species image changes to Hunter's Bestiary core
-ok 34 - dashboard delegates species image changes to Hunter's Bestiary core
+# Subtest: dashboard delegates species image changes to Runyth Hunter's Bestiary core
+ok 34 - dashboard delegates species image changes to Runyth Hunter's Bestiary core
   ---
   duration_ms: 2.115067
   type: 'test'
@@ -293,7 +293,7 @@ ok 45 - startup failures are kept outside the frozen public API
 
 ```text
 
-> hunters-bestiary-aquatic-ecology@1.2.4 check
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.2.4 check
 > node tools/validate.mjs
 
 Aquatic ecology validation passed: 12 species, 36 signs, 60 rumors, 8 books, 12 hunts, 24 complications, 36 harvests.

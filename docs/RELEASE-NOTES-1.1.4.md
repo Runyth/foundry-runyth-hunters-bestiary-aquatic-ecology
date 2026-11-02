@@ -1,6 +1,6 @@
-# Hunter's Bestiary: Aquatic Ecology 1.1.4
+# Runyth Hunter's Bestiary: Aquatic Ecology 1.1.4
 
-This patch normalizes the research-book generation progress window with the Hunter's Bestiary family standard.
+This patch normalizes the research-book generation progress window with the Runyth Hunter's Bestiary family standard.
 
 ## Behaviour
 
@@ -12,5 +12,5 @@ This patch normalizes the research-book generation progress window with the Hunt
 ## Compatibility
 
 - Foundry VTT 13
-- Hunter's Bestiary 1.3.5 or newer
+- Runyth Hunter's Bestiary 1.3.5 or newer
 - Stable module ID, settings, ecology IDs, Journal provenance, and API defaults are unchanged

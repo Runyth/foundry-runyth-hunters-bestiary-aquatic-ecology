@@ -34,7 +34,7 @@ export function buildCoreBundles(data) {
       harvests: species.harvestIds,
       actorPolicy: species.actorPolicy,
       flags: {
-        "hunters-bestiary-aquatic-ecology": { speciesId: species.id, schemaVersion: data.schemaVersion }
+        "runyth-hunters-bestiary-aquatic-ecology": { speciesId: species.id, schemaVersion: data.schemaVersion }
       }
     };
     const bundleSigns = species.signIds.map((id) => signs.get(id));

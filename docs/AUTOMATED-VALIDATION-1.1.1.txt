@@ -1,4 +1,4 @@
-Hunter's Bestiary: Aquatic Ecology 1.1.1 automated validation
+Runyth Hunter's Bestiary: Aquatic Ecology 1.1.1 automated validation
 
 PASS: 26/26 Node test cases
 PASS: ecology/package/static validation

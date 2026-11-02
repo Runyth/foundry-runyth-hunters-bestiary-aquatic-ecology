@@ -1,7 +1,7 @@
 Hunter’s Bestiary: Aquatic Ecology 1.2.3
 
 
-> hunters-bestiary-aquatic-ecology@1.2.3 test
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.2.3 test
 > node --test tests/*.test.mjs
 
 TAP version 13
@@ -179,8 +179,8 @@ ok 29 - every bundled species declares a packaged image
   duration_ms: 8.083003
   type: 'test'
   ...
-# Subtest: dashboard delegates species image changes to Hunter's Bestiary core
-ok 30 - dashboard delegates species image changes to Hunter's Bestiary core
+# Subtest: dashboard delegates species image changes to Runyth Hunter's Bestiary core
+ok 30 - dashboard delegates species image changes to Runyth Hunter's Bestiary core
   ---
   duration_ms: 1.315214
   type: 'test'
@@ -262,7 +262,7 @@ ok 41 - startup failures are kept outside the frozen public API
 # duration_ms 1404.787037
 
 
-> hunters-bestiary-aquatic-ecology@1.2.3 check
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.2.3 check
 > node tools/validate.mjs
 
 Aquatic ecology validation passed: 12 species, 36 signs, 60 rumors, 8 books, 12 hunts, 24 complications, 36 harvests.

@@ -7,7 +7,7 @@ function installRuntime({ isGM = false, getMonster = () => null } = {}) {
   globalThis.foundry = { utils: { deepClone: value => structuredClone(value) } };
   globalThis.game = {
     user: { isGM },
-    modules: new Map([["hunters-bestiary", { api: { getMonster } }]])
+    modules: new Map([["runyth-hunters-bestiary", { api: { getMonster } }]])
   };
   return () => { globalThis.game = previous.game; globalThis.foundry = previous.foundry; };
 }

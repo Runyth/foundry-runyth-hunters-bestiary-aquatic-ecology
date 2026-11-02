@@ -19,7 +19,7 @@ function referencedRuntimePaths() {
 }
 
 test("the fixed shared result contract is required", () => {
-  const core = manifest.relationships?.requires?.find(entry => entry.id === "hunters-bestiary");
+  const core = manifest.relationships?.requires?.find(entry => entry.id === "runyth-hunters-bestiary");
   assert.equal(core?.compatibility?.minimum, "1.4.2");
 });
 

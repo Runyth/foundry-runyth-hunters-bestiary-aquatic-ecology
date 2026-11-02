@@ -1,7 +1,7 @@
-Hunter's Bestiary: Aquatic Ecology 1.1.4 automated validation
+Runyth Hunter's Bestiary: Aquatic Ecology 1.1.4 automated validation
 
 
-> hunters-bestiary-aquatic-ecology@1.1.4 test
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.1.4 test
 > node --test tests/*.test.mjs
 
 TAP version 13
@@ -208,7 +208,7 @@ ok 32 - public generator keeps its original fail-fast array behavior by default
 # duration_ms 1682.216385
 
 
-> hunters-bestiary-aquatic-ecology@1.1.4 check
+> runyth-runyth-hunters-bestiary-aquatic-ecology@1.1.4 check
 > node tools/validate.mjs
 
 Aquatic ecology validation passed: 12 species, 36 signs, 60 rumors, 8 books, 12 hunts, 24 complications, 36 harvests.

@@ -1,4 +1,4 @@
-# Patch Qualification — Hunter's Bestiary: Aquatic Ecology 1.2.2
+# Patch Qualification — Runyth Hunter's Bestiary: Aquatic Ecology 1.2.2
 
 - Automated tests: **40/40**
 - English/German localization parity: **2407/2407**

@@ -29,7 +29,7 @@ export async function registerAquaticExpansion(providerId, content, options = {}
   }
   if (!report.complete) await recordIncomplete(providerId, report);
   const core = game.modules.get(CORE_ID)?.api;
-  if (!core?.registerContent) throw new Error("Hunter's Bestiary core API registerContent is unavailable.");
+  if (!core?.registerContent) throw new Error("Runyth Hunter's Bestiary core API registerContent is unavailable.");
   const bundles = buildCoreBundles(content);
   await core.registerContent(providerId, bundles, { allowIncomplete });
   providers.set(providerId, { providerId, content: clone(content), bundles, complete: report.complete, validation: report, registeredAt: new Date().toISOString() });

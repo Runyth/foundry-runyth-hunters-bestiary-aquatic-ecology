@@ -2373,7 +2373,7 @@
   "HBAE.Notification.ImageUpdated": "Artenbild, verknüpftes Akteursbild und Prototyp-Token wurden aktualisiert.",
   "HBAE.Notification.Invalid": "Validierung der aquatischen Ökologie fehlgeschlagen.",
   "HBAE.Notification.PositionReset": "Die Position der Übersicht Aquatische Ökologie wurde zurückgesetzt.",
-  "HBAE.Notification.Registered": "Aquatische Ökologie wurde bei Hunter's Bestiary registriert.",
+  "HBAE.Notification.Registered": "Aquatische Ökologie wurde bei Runyth Hunter's Bestiary registriert.",
   "HBAE.Notification.SizeReset": "Die Größe der Übersicht Aquatische Ökologie wurde zurückgesetzt.",
   "HBAE.Notification.Validation": "Die Prüfung wurde mit {issues} Problem(en) abgeschlossen.",
   "HBAE.Open": "Aquatische Ökologie öffnen",
@@ -2404,6 +2404,6 @@
   "HBAE.Tab.Signs": "Spuren",
   "HBAE.Tab.Species": "Arten",
   "HBAE.Tab.Validation": "Validierung",
-  "HBAE.Title": "Hunter's Bestiary: Aquatic Ecology",
+  "HBAE.Title": "Runyth Hunter's Bestiary: Aquatic Ecology",
   "HBAE.Validate": "Ökologie validieren"
 }

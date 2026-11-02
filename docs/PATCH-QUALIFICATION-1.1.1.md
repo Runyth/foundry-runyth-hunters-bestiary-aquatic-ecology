@@ -1,4 +1,4 @@
-# Patch qualification — Hunter's Bestiary: Aquatic Ecology 1.1.1
+# Patch qualification — Runyth Hunter's Bestiary: Aquatic Ecology 1.1.1
 
 - Automated tests: 26/26 passed.
 - English/German localization parity: 66/66 keys.

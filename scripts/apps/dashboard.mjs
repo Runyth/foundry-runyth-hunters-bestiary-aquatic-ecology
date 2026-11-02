@@ -12,7 +12,7 @@ const GEOMETRY_OPTIONS = Object.freeze({ moduleId: MODULE_ID, settingKey: SETTIN
 
 function toolkit() {
   const value = game.modules.get(CORE_ID)?.api?.ui;
-  if (!value) throw new Error("Hunter's Bestiary dashboard API 1.0.0 is unavailable.");
+  if (!value) throw new Error("Runyth Hunter's Bestiary dashboard API 1.0.0 is unavailable.");
   return value;
 }
 

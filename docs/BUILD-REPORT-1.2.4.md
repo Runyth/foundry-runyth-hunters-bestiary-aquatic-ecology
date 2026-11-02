@@ -1,6 +1,6 @@
 # Build Report 1.2.4
 
-Hunter's Bestiary: Aquatic Ecology 1.2.4 fixes malformed player-visible species references that could become `null` when Hunter's Bestiary knowledge filtering hid a species. The public API now always preserves the stable species ID for a valid packaged species.
+Runyth Hunter's Bestiary: Aquatic Ecology 1.2.4 fixes malformed player-visible species references that could become `null` when Runyth Hunter's Bestiary knowledge filtering hid a species. The public API now always preserves the stable species ID for a valid packaged species.
 
 Qualification:
 - 45/45 automated tests pass.

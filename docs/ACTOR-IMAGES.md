@@ -5,7 +5,7 @@ Each species in `data/ecology.json` has an `img` field. That image is registered
 ## Pre-packed source workflow
 
 1. Add files under `assets/actors/`, preferably `<species-id>.webp`.
-2. Set the species `img` path to `modules/hunters-bestiary-aquatic-ecology/assets/actors/<species-id>.webp`.
+2. Set the species `img` path to `modules/runyth-runyth-hunters-bestiary-aquatic-ecology/assets/actors/<species-id>.webp`.
 3. Run the test, validation, and build commands.
 
 ## Installed world workflow

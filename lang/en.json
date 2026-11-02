@@ -2373,7 +2373,7 @@
   "HBAE.Notification.ImageUpdated": "The species image, linked Actor portrait, and prototype token were updated.",
   "HBAE.Notification.Invalid": "Aquatic ecology validation failed.",
   "HBAE.Notification.PositionReset": "Aquatic Ecology Dashboard position reset.",
-  "HBAE.Notification.Registered": "Aquatic ecology registered with Hunter's Bestiary.",
+  "HBAE.Notification.Registered": "Aquatic ecology registered with Runyth Hunter's Bestiary.",
   "HBAE.Notification.SizeReset": "Aquatic Ecology Dashboard size reset.",
   "HBAE.Notification.Validation": "Validation completed with {issues} issue(s).",
   "HBAE.Open": "Open Aquatic Ecology",
@@ -2404,6 +2404,6 @@
   "HBAE.Tab.Signs": "Signs",
   "HBAE.Tab.Species": "Species",
   "HBAE.Tab.Validation": "Validation",
-  "HBAE.Title": "Hunter's Bestiary: Aquatic Ecology",
+  "HBAE.Title": "Runyth Hunter's Bestiary: Aquatic Ecology",
   "HBAE.Validate": "Validate ecology"
 }

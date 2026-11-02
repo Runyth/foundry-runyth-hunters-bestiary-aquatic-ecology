@@ -1,4 +1,4 @@
-# Manual Test Plan - Hunter's Bestiary: Aquatic Ecology 1.1.0
+# Manual Test Plan - Runyth Hunter's Bestiary: Aquatic Ecology 1.1.0
 
 
 1. Back up a disposable Foundry v13 world.
