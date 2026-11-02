@@ -1,5 +1,7 @@
 ## 1.2.4 — 2026-08-24
 
+- First publication as a Runyth module: `runyth-hunters-bestiary-aquatic-ecology` / **Runyth Hunter's Bestiary: Aquatic Ecology** with the publication standard in place — deterministic `-mod`, `-src`, and `-doc` archives with per-version checksums, byte-identical rebuild verification, standard quality and release pipelines, the full GNU AGPL-3.0-or-later licence with the standard source notice, the standard README licence chapter, and the manifest URL surfaces.
+
 - Fixed the player-visible species API so a species hidden by Runyth Hunter's Bestiary knowledge filtering falls back to its stable `{ id }` reference instead of becoming `null`.
 - Prevented dependent system layers from receiving malformed species arrays during startup validation.
 - Added regression coverage for hidden species, visible species, GM species access, and invalid packaged entries.
