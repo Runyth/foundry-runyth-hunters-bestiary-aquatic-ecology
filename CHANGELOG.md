@@ -1,6 +1,6 @@
-## 1.2.5 - 2026-11-03
+# Changelog
 
-### Fixed and improved
+## 1.2.5 — 2026-11-03
 
 - AGENTS.md conformance release: the manifest author carries the standard organisational URL, and the shipped homebrew content states its CC BY-SA 4.0 content licence in the README and on the content data records. No runtime behaviour relationship or dependency change.
 
@@ -36,8 +36,6 @@
 - Added future-language authoring documentation and regression coverage.
 - Preserved the coordinated actor-image feature set and all stable IDs and settings.
 
-# Changelog
-
 ## 1.2.0
 
 - Added packaged species-image fields and dashboard thumbnails.
@@ -69,14 +67,14 @@
 - Fixed the settings launcher race that called `bringToFront()` before ApplicationV2 had created its window element.
 - Updated the core dependency floor to Runyth Hunter's Bestiary 1.3.3.
 
-## 1.1.1 - 2026-07-31
+## 1.1.1 — 2026-07-31
 
 - Fixed the Configure Settings **Open Dashboard** action on Foundry v13.
 - Removed unsupported `minWidth` and `minHeight` properties from the sealed ApplicationV2 position defaults.
 - Retained the same effective minimum size through the shared geometry defaults and viewport clamping.
 - Added regression coverage preventing non-position fields from entering ApplicationV2 position options.
 
-## 1.1.0 - 2026-07-31
+## 1.1.0 — 2026-07-31
 
 - Normalized the canonical family title and coordinated dependency versions across all four official modules.
 - Added/consumed the core naming API with structured validation, registrations, startup warning deduplication, and dashboard-open warnings.
@@ -84,7 +82,6 @@
 - Preserved stable module IDs, existing settings and flags, imported content identities, provider IDs, and documented compatibility aliases.
 - Added complete English/German localization parity, developer guidance, migration documentation, tests, and release qualification artifacts.
 - Retained this module's ocean-blue ecological palette and module-specific functionality.
-
 
 ## 1.0.1 — 2026-07-31
 
