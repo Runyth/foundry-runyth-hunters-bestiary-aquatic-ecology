@@ -23,6 +23,10 @@ See [`docs/ACTOR-IMAGES.md`](docs/ACTOR-IMAGES.md) for the pre-packed and instal
 
 This module uses Foundry VTT’s standard global localization system. Select the active language through Foundry’s **Language Preference** setting; there is no dashboard-specific selector. English is the fallback/default language. See [`docs/LOCALIZATION.md`](docs/LOCALIZATION.md) to add another language.
 
+## Content licence
+
+Gameplay and homebrew content shipped by this module — the bundled aquatic ecology species, signs, rumours, books, hunts, complications and harvests — is **CC BY-SA 4.0**. The program source is **AGPL-3.0-or-later**; see the standard licence chapter below.
+
 ## Licence
 
 Copyright © 2026  [Daniel Braniewski](https://brani.dev/)
