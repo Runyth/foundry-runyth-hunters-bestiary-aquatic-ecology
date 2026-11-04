@@ -304,7 +304,7 @@
         11,
         12
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "siltbell-colony",
@@ -607,7 +607,7 @@
         7,
         8
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "mudcrown-burrower",
@@ -901,7 +901,7 @@
         15,
         16
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "tideglass-keeper",
@@ -1197,7 +1197,7 @@
         19,
         20
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "pilingshell-scavenger",
@@ -1493,7 +1493,7 @@
         "reason": "HBAE.Content.Ecology.species.pilingshell_scavenger.actorPolicy.reason"
       },
       "protectedMonths": [],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "needlelung-lamprey",
@@ -1790,7 +1790,7 @@
         "reason": "HBAE.Content.Ecology.species.needlelung_lamprey.actorPolicy.reason"
       },
       "protectedMonths": [],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "glassfin-pike",
@@ -2080,7 +2080,7 @@
         14,
         15
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "reedjaw-ambusher",
@@ -2371,7 +2371,7 @@
         20,
         21
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "wreckcoil-eel",
@@ -2665,7 +2665,7 @@
         26,
         27
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "greywake-sifter",
@@ -2967,7 +2967,7 @@
         31,
         32
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "coldwake-thresher",
@@ -3262,7 +3262,7 @@
         4,
         5
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     },
     {
       "id": "trenchjaw-cetarch",
@@ -3584,7 +3584,7 @@
         32,
         33
       ],
-      "img": "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
+      "img": "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg"
     }
   ],
   "signs": [

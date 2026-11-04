@@ -12,7 +12,7 @@ export function buildCoreBundles(data) {
     const monster = {
       id: species.id,
       name: species.commonName,
-      img: species.img ?? "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg",
+      img: species.img ?? "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg",
       commonName: species.commonName,
       description: `HBAE.Content.Ecology.species.${species.id.replaceAll("-", "_")}.description`,
       habitat: species.habitat,
