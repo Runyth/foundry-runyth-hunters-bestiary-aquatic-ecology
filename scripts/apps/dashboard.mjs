@@ -82,7 +82,7 @@ export class AquaticEcologyDashboard extends HandlebarsApplicationMixin(Applicat
         return {
           ...record,
           displayName,
-          image: imageApi?.getMonsterImage?.(record.id)?.imagePath ?? record.img ?? "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg",
+          image: imageApi?.getMonsterImage?.(record.id)?.imagePath ?? record.img ?? "modules/runyth-hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg",
           summary: localizeContent(record.externalAnatomy?.bodyPlan ?? record.description) || "",
           regionsText: regions.join(", "),
           ecologicalRole,

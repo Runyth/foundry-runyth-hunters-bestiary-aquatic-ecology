@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.7 — 2026-11-05
+
+- The ecology dataset fetch now uses the rebranded module id
+  (`runyth-hunters-bestiary-aquatic-ecology`); dashboard asset fallbacks and the
+  bundled dataset's image paths follow the fix.
 ## 1.2.6 — 2026-11-04
 
 - The installable archive now ships every relative import the manifest entry needs, so the module's buttons and settings register on world load instead of silently failing.
