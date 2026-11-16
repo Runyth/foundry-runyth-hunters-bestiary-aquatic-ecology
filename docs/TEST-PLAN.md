@@ -35,4 +35,3 @@ The build command reruns static validation and the complete test suite before pa
 - Core toolkit for geometry, stable search, progress, busy state, naming validation, and resets.
 - Player-safe ecology presentation remains separated from GM-only truth/provider diagnostics.
 - The twelve-species ecology, food web, secrecy filtering, and ocean-blue palette remain.
-

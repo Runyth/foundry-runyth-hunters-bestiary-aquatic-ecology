@@ -1,41 +1,90 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
-import fs from "node:fs";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { execFileSync } from "node:child_process";
-import { validateEcologyPackage } from "../scripts/validation.mjs";
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const readJson = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
-const manifest = readJson("module.json");
-const data = readJson("data/ecology.json");
-const en = readJson("lang/en.json");
-const de = readJson("lang/de.json");
-const errors = [];
-if (manifest.version !== "1.2.4" || JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8")).version !== "1.2.4") errors.push("Manifest and package versions must both be 1.2.4.");
-const requireFile = (file) => { if (!fs.existsSync(path.join(root, file))) errors.push(`Missing referenced file ${file}`); };
-for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map((entry) => entry.path)]) requireFile(file);
-if (manifest.relationships.requires.find((entry) => entry.id === "runyth-hunters-bestiary")?.compatibility?.minimum !== "1.4.2") errors.push("Core minimum must be 1.4.2.");
-const report = validateEcologyPackage(data, { strict: true });
-if (!report.valid) errors.push(...report.issues.map((entry) => `${entry.code} ${entry.path}: ${entry.message}`));
-if (JSON.stringify(Object.keys(en).sort()) !== JSON.stringify(Object.keys(de).sort())) errors.push("modular English/German localization parity failed.");
-const scripts = [...fs.readdirSync(path.join(root, "scripts"), { recursive: true })].filter((name) => String(name).endsWith(".mjs"));
-const runtimeEntries = ["main.mjs", ...scripts.map((relative) => path.join("scripts", String(relative)))];
-for (const relative of runtimeEntries) execFileSync(process.execPath, ["--check", path.join(root, relative)], { stdio: "pipe" });
+import { PROJECT_ROOT, pathExists, readJson, walkFiles } from "./lib/project.mjs";
+import { flattenJson } from "./lib/text.mjs";
+import { matchesAny } from "./lib/glob.mjs";
 
-for (const relative of runtimeEntries) {
-  const file = path.join(root, relative);
-  const source = fs.readFileSync(file, "utf8");
-  for (const match of source.matchAll(/(?:import|export)\s+(?:[^"']+?\s+from\s+)?["'](\.[^"']+)["']/g)) {
-    const resolved = path.resolve(path.dirname(file), match[1]);
-    if (!fs.existsSync(resolved)) errors.push(`Unresolved production import ${match[1]} from ${relative}`);
+const errors = [];
+const warnings = [];
+const config = await readJson("runyth.config.json");
+const manifest = await readJson("module.json");
+const packageJson = await readJson("package.json");
+
+function requireCondition(condition, message) {
+  if (!condition) errors.push(message);
+}
+
+requireCondition(config.schemaVersion === 1, "runyth.config.json schemaVersion must be 1.");
+requireCondition(/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(manifest.id ?? ""), "module.json id must be lowercase kebab-case.");
+requireCondition(typeof manifest.title === "string" && manifest.title.length > 0, "module.json title is required.");
+requireCondition(/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/u.test(manifest.version ?? ""), "module.json version must be semantic.");
+requireCondition(manifest.compatibility?.minimum !== undefined, "Foundry compatibility.minimum is required.");
+requireCondition(manifest.compatibility?.verified !== undefined, "Foundry compatibility.verified is required.");
+requireCondition(packageJson.type === "module", "package.json type must be module.");
+if (config.validation.requireVersionParity) {
+  requireCondition(packageJson.version === manifest.version, "package.json and module.json versions differ.");
+}
+if (!config.template.source && config.validation.requireRepositoryUrls) {
+  const expectedRepository = `https://github.com/${config.module.repository}`;
+  requireCondition(manifest.url === expectedRepository, `module.json url must be ${expectedRepository}.`);
+  requireCondition(manifest.manifest?.startsWith(`${expectedRepository}/releases/`), "module.json manifest URL must use GitHub Releases.");
+  requireCondition(manifest.download?.includes(`/v${manifest.version}/`), "module.json download URL must contain the current version tag.");
+}
+
+const referencedPaths = new Set();
+for (const field of ["esmodules", "scripts", "styles"]) {
+  for (const value of manifest[field] ?? []) referencedPaths.add(value);
+}
+for (const language of manifest.languages ?? []) referencedPaths.add(language.path);
+for (const pack of manifest.packs ?? []) if (pack.path) referencedPaths.add(pack.path);
+for (const relativePath of referencedPaths) {
+  requireCondition(await pathExists(path.join(PROJECT_ROOT, relativePath)), `Manifest path does not exist: ${relativePath}`);
+}
+
+const languages = new Map((manifest.languages ?? []).map((entry) => [entry.lang, entry.path]));
+for (const locale of config.validation.requiredLocales ?? []) {
+  requireCondition(languages.has(locale), `Required locale is absent from module.json: ${locale}`);
+}
+if (config.validation.requireLocaleParity && languages.size > 1) {
+  const localeKeys = [];
+  for (const [locale, relativePath] of [...languages.entries()].sort()) {
+    const document = JSON.parse(await readFile(path.join(PROJECT_ROOT, relativePath), "utf8"));
+    localeKeys.push([locale, new Set(flattenJson(document).keys())]);
+  }
+  const [baseLocale, baseKeys] = localeKeys[0];
+  for (const [locale, keys] of localeKeys.slice(1)) {
+    const missing = [...baseKeys].filter((key) => !keys.has(key));
+    const extra = [...keys].filter((key) => !baseKeys.has(key));
+    if (missing.length || extra.length) errors.push(`Localization parity mismatch ${baseLocale}/${locale}: missing=[${missing.join(", ")}], extra=[${extra.join(", ")}].`);
   }
 }
-const production = runtimeEntries.map((name) => fs.readFileSync(path.join(root, name), "utf8")).join("\n");
-for (const forbidden of ["renderApplication", "renderApplicationV2", "renderChatMessage", "window.addEventListener", "$(`", "FilePicker("]) if (production.includes(forbidden)) errors.push(`Forbidden or broad runtime pattern: ${forbidden}`);
-const css = fs.readFileSync(path.join(root, "styles/runyth-hunters-bestiary-aquatic-ecology.css"), "utf8");
-for (const line of css.split(/\r?\n/)) if (/^(button|input|\.window-header|\.application|\.tab|\.sr-only)\b/.test(line.trim())) errors.push(`Unscoped CSS selector: ${line.trim()}`);
-if (data.species.length !== 12 || data.signs.length !== 36 || data.rumors.length !== 60 || data.hunts.length !== 12) errors.push("Expected content counts not met.");
-if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`Aquatic ecology validation passed: ${data.species.length} species, ${data.signs.length} signs, ${data.rumors.length} rumors, ${data.books.length} books, ${data.hunts.length} hunts, ${data.complications.length} complications, ${data.harvests.length} harvests.`);
-console.log(`Localization parity: ${Object.keys(en).length} keys. Static runtime modules: ${runtimeEntries.length}.`);
+
+const files = await walkFiles(PROJECT_ROOT);
+const scriptFiles = files.filter((file) => matchesAny(file, ["**/*.js", "**/*.mjs"]) && !matchesAny(file, ["dist/**", "node_modules/**"]));
+const importPattern = /(?:import|export)\s+(?:[^"']*?\s+from\s+)?["'](\.{1,2}\/[^"']+)["']/gu;
+for (const relativePath of scriptFiles) {
+  const source = await readFile(path.join(PROJECT_ROOT, relativePath), "utf8");
+  for (const match of source.matchAll(importPattern)) {
+    const candidate = path.resolve(PROJECT_ROOT, path.dirname(relativePath), match[1]);
+    const possibilities = [candidate, `${candidate}.js`, `${candidate}.mjs`, path.join(candidate, "index.js")];
+    if (!(await Promise.all(possibilities.map(pathExists))).some(Boolean)) {
+      errors.push(`Unresolved relative import in ${relativePath}: ${match[1]}`);
+    }
+  }
+}
+
+if (!config.template.source) {
+  const placeholderPattern = /runyth[-_ ]module[-_ ]template/giu;
+  for (const relativePath of files.filter((file) => matchesAny(file, ["module.json", "package.json", "scripts/**/*.js", "lang/*.json"]))) {
+    const content = await readFile(path.join(PROJECT_ROOT, relativePath), "utf8");
+    if (placeholderPattern.test(content)) errors.push(`Template identity remains in ${relativePath}. Run npm run bootstrap.`);
+    placeholderPattern.lastIndex = 0;
+  }
+}
+
+for (const warning of warnings) console.warn(`Warning: ${warning}`);
+for (const error of errors) console.error(`Error: ${error}`);
+if (errors.length > 0) process.exitCode = 1;
+else console.log(`Validation passed: ${files.length} repository files, ${scriptFiles.length} JavaScript modules.`);

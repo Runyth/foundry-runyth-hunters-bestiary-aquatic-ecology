@@ -381,4 +381,3 @@ Do not add broad `button`, `input`, `.window-content`, or ApplicationV2 selector
 - Core toolkit for geometry, stable search, progress, busy state, naming validation, and resets.
 - Player-safe ecology presentation remains separated from GM-only truth/provider diagnostics.
 - The twelve-species ecology, food web, secrecy filtering, and ocean-blue palette remain.
-
